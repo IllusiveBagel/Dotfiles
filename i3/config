@@ -89,7 +89,7 @@ bindsym $mod+a focus parent
 set $ws1 " Code"
 set $ws2 " Web"
 set $ws3 " Terminal"
-set $ws4 "4"
+set $ws4 " Email"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -101,7 +101,7 @@ set $ws10 " Spotify"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace number $ws4
+bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
@@ -113,7 +113,7 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
@@ -124,7 +124,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Workspace Apps
 assign [class="Code"] $ws1
 assign [class="firefox"] $ws2
-assign [class="URxvt"] $ws3
+assign [class="Mail"] $ws4
 assign [class="spotify"] $ws10
 
 # reload the configuration file
@@ -201,6 +201,7 @@ exec --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
 workspace $ws1 output DP-2
 workspace $ws2 output eDP-1
 workspace $ws3 output DP-2
+workspace $ws4 output eDP-1
 workspace $ws10 output eDP-1
 
 # Lock Binding
@@ -219,4 +220,7 @@ exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/activ
 # Startup Apps
 exec code
 exec firefox
-exec spotify
+exec thunderbird
+
+# Floating Apps
+for_window [class="Enpass"] floating enable resize set 900 600
