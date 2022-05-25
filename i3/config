@@ -1,4 +1,19 @@
-# i3 config file (v4)
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#  ______   ___    ___                                        ____                             ___       #
+# /\__  _\ /\_ \  /\_ \                    __                /\  _`\                          /\_ \      #
+# \/_/\ \/ \//\ \ \//\ \    __  __    ____/\_\  __  __     __\ \ \L\ \     __       __      __\//\ \     #
+#    \ \ \   \ \ \  \ \ \  /\ \/\ \  /',__\/\ \/\ \/\ \  /'__`\ \  _ <'  /'__`\   /'_ `\  /'__`\\ \ \    #
+#     \_\ \__ \_\ \_ \_\ \_\ \ \_\ \/\__, `\ \ \ \ \_/ |/\  __/\ \ \L\ \/\ \L\.\_/\ \L\ \/\  __/ \_\ \_  #
+#     /\_____\/\____\/\____\\ \____/\/\____/\ \_\ \___/ \ \____\\ \____/\ \__/.\_\ \____ \ \____\/\____\ #
+#     \/_____/\/____/\/____/ \/___/  \/___/  \/_/\/__/   \/____/ \/___/  \/__/\/_/\/___L\ \/____/\/____/ #
+#                                                                                   /\____/              #
+#                                                                                   \_/__/               #
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+# I3 config #
+
+# Monitors
+set $primary DP-2
+set $secondary eDP-1
 
 # Mod
 set $mod Mod4
@@ -86,28 +101,30 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 " Code"
-set $ws2 " Web"
-set $ws3 " Terminal"
-set $ws4 " Email"
-set $ws5 " Slack"
-set $ws6 " Teams"
-set $ws7 " Notion"
-set $ws8 "8 Misc"
-set $ws9 "9 Misc"
-set $ws10 " Spotify"
+set $ws1        " Code"
+set $wsWeb      " Web"
+set $ws2        " Terminal"
+set $ws3        " Email"
+set $ws4        " Slack"
+set $ws5        " Teams"
+set $ws6        " Notion"
+set $ws7        "7 Misc"
+set $ws8        "8 Misc"
+set $ws9        "9 Misc"
+set $ws10       " Spotify"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1          workspace $ws1
+bindsym $mod+Shift+w    workspace $wsWeb
+bindsym $mod+2          workspace $ws2
+bindsym $mod+3          workspace $ws3
+bindsym $mod+4          workspace $ws4
+bindsym $mod+5          workspace $ws5
+bindsym $mod+6          workspace $ws6
+bindsym $mod+7          workspace $ws7
+bindsym $mod+8          workspace $ws8
+bindsym $mod+9          workspace $ws9
+bindsym $mod+0          workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -122,12 +139,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Workspace Apps
-assign [class="Code"] $ws1
-assign [class="Thunderbird"] $ws4
-assign [class="Slack"] $ws5
-assign [class="Microsoft Teams - Preview"] $ws6
-assign [class="notion-snap"] $ws7
-assign [class="Spotify"] $ws10
+assign [class="Code"]           $ws1
+assign [class="slack"]          $ws4
+assign [class="notion-snap"]    $ws6
+assign [class="Spotify"]        $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -167,45 +182,32 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Color Variables
-set $bg-color			#002b36
-set $inactive-bg-color		#002b36
-set $text-color			#f3f4f5
-set $inactive-text-color	#676E6D
-set $urgent-bg-color		#E53935
+set $bg-color			        #002b36
+set $inactive-bg-color	        #002b36
+set $text-color	                #f3f4f5
+set $inactive-text-color        #676E6D
+set $urgent-bg-color		    #E53935
 
 # Window Colors
-#			border			background		text			indicator
-client.focused		$bg-color		$bg-color		$text-color		#000000
-client.unfocused 	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#222222
-client.focused_inactive $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#222222
-client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		#00ff00
+#		        	    border			        background		        text			        indicator
+client.focused  		$bg-color		        $bg-color		        $text-color		        #000000
+client.unfocused        $inactive-bg-color      $inactive-bg-color	    $inactive-text-color	#222222
+client.focused_inactive $inactive-bg-color	    $inactive-bg-color	    $inactive-text-color	#222222
+client.urgent		    $urgent-bg-color	    $urgent-bg-color	    $text-color		        #00ff00
 
 hide_edge_borders both
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         colors {
-# 		        background $bg-color
-#		        separator #757575
-#		        #			border			background		text
-#		        focused_workspace	$bg-color		$bg-color		$text-color
-#		        inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
-#		        urgent_workspace	$urgent-bg-color	$urgent-bg-color	$text-color
-#	}	
-# }
 
 # Monitor Positions
 exec --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
 
 # Workspace Monitor Lock
-workspace $ws1 output DP-2
-workspace $ws3 output DP-2
-workspace $ws4 output eDP-1
-workspace $ws5 output eDP-1
-workspace $ws6 output eDP-1
-workspace $ws7 output eDP-1
-workspace $ws10 output eDP-1
+workspace $ws1  output $primary
+workspace $ws3  output $primary
+workspace $ws4  output $secondary
+workspace $ws5  output $secondary
+workspace $ws6  output $secondary
+workspace $ws7  output $secondary
+workspace $ws10 output $secondary
 
 # Lock Binding
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
