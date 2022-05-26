@@ -202,7 +202,7 @@ exec --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
 
 # Workspace Monitor Lock
 workspace $ws1  output $primary
-workspace $ws3  output $primary
+workspace $ws3  output $secondary
 workspace $ws4  output $secondary
 workspace $ws5  output $secondary
 workspace $ws6  output $secondary
@@ -235,3 +235,7 @@ for_window [class="Devtools"] floating enable
 # Polybar
 exec polybar primary
 exec polybar secondary
+
+# Gaps
+for_window [class=".*"] border pixel 0
+gaps inner 20
