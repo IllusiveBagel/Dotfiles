@@ -22,75 +22,53 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 red = dc322f
- 
-[bar/primary]
+
+[bar/base]
 bottom = true
-monitor = DP-2
 width = 100%
 height = 27
 radius = 0
 fixed-center = true
- 
+
 background = ${colors.background}
 foreground = ${colors.foreground}
- 
+
 line-size = 3
 line-color = #f00
- 
+
 border-size = 0
 border-color = #00000000
- 
+
 padding-left = 0
 padding-right = 2
- 
-module-margin-left = 1
-module-margin-right = 2
- 
+
 font-0 = Hack Nerd Font:size=10;0
 font-1 = FontAwesome 6 Free:size=10;1
-font-2 = FontAwesome 6 Free:size=10;0
- 
-modules-left = i3
-modules-center = 
-modules-right = filesystem volume wlan eth battery date powermenu
- 
-tray-position = right
-tray-padding = 2
- 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
-[bar/secondary]
-bottom = true
-monitor = eDP-1
-width = 100%
-height = 27
-radius = 0
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Hack Nerd Font:size=10;0
+font-2 = FontAwesome 6 Brands:size=10;0
 
 modules-left = i3
 modules-center =
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+ 
+[bar/primary]
+inherits = bar/base
+monitor = DP-2
+
+module-margin-left = 1
+module-margin-right = 2
+ 
+modules-right = filesystem volume wlan eth battery date powermenu
+ 
+[bar/secondary]
+inherits = bar/base
+monitor = eDP-1
+
 module-right =
 
 tray-position = right
 tray-padding = 2
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 [module/xwindow]
 type = internal/xwindow
