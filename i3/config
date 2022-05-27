@@ -238,3 +238,6 @@ exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # Gaps
 for_window [class=".*"] border pixel 0
 gaps inner 20
+
+for_window [class="Enpass"] border normal
+title_align center

@@ -1,11 +1,24 @@
-URxvt.font: 			xft:Hack Nerd Font:size=10
-URxvt.scrollBar: 		false
-URxvt*lineSpace: 		1
-URxvt.litterSpace: 		-1
+!#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+!#  ______   ___    ___                                        ____                             ___       #
+!# /\__  _\ /\_ \  /\_ \                    __                /\  _`\                          /\_ \      #
+!# \/_/\ \/ \//\ \ \//\ \    __  __    ____/\_\  __  __     __\ \ \L\ \     __       __      __\//\ \     #
+!#    \ \ \   \ \ \  \ \ \  /\ \/\ \  /',__\/\ \/\ \/\ \  /'__`\ \  _ <'  /'__`\   /'_ `\  /'__`\\ \ \    #
+!#     \_\ \__ \_\ \_ \_\ \_\ \ \_\ \/\__, `\ \ \ \ \_/ |/\  __/\ \ \L\ \/\ \L\.\_/\ \L\ \/\  __/ \_\ \_  #
+!#     /\_____\/\____\/\____\\ \____/\/\____/\ \_\ \___/ \ \____\\ \____/\ \__/.\_\ \____ \ \____\/\____\ #
+!#     \/_____/\/____/\/____/ \/___/  \/___/  \/_/\/__/   \/____/ \/___/  \/__/\/_/\/___L\ \/____/\/____/ #
+!#                                                                                   /\____/              #
+!#                                                                                   \_/__/               #
+!#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+! Xresources Config
+
+URxvt.font: 					xft:Hack Nerd Font:size=10
+URxvt.scrollBar: 				false
+URxvt*lineSpace: 				1
+URxvt.litterSpace: 				-1
 URxvt.perl-ext-common:          clipboard
 URxvt*keysym.Control-Shift-C:   clipboard:copy
 URxvt*keysym.Control-Shift-V:   clipboard:paste
-URxvt.clipboard.autocopy: 	true
+URxvt.clipboard.autocopy: 		true
 
 *background: 	[97]#282a36
 *foreground:   	#eff0eb
@@ -29,4 +42,4 @@ URxvt.clipboard.autocopy: 	true
 *color15:     	#eff0eb
 
 *transparent: 	true
-*shading: 	30
+*shading: 		30
