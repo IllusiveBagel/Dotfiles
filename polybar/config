@@ -49,6 +49,14 @@ modules-center =
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+[bar/single]
+inherits = bar/base
+monitor = eDP-1
+
+module-margin-left = 1
+module-margin-right = 1
+modules-right = filesystem volume wlan battery date powermenu
  
 [bar/primary]
 inherits = bar/base
