@@ -2,7 +2,9 @@
 
 # Get the i3 config
 echo Copying I3 Config...
-cp ~/.config/i3/config ./i3/
+cp ~/.config/i3/desktop.config ./i3/
+cp ~/.config/i3/laptop.config ./i3/
+cp ~/.config/i3/i3.sh ./i3/
 cp ~/.config/i3/polybar.sh ./i3/
 echo I3 Copied!
 
